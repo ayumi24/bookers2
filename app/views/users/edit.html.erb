@@ -1,3 +1,10 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
-<p>User info プロフィール編集</p>
+<h2>User info</h2>
+<%= form_with model:User.find(params[:id]) do |f| %>
+    <label for="inputName">Name</label><br>
+        <%= f.text_field :name,autofocus: true, id:"inputName",placeholder:"名前" %><br>
+    <label for="inputImage">image</label><br>
+        <%= f.file_field :profile_image, placeholder:"プロフィール画像",accept: "image/*" %><br>
+    <label for="inputIntroduction">introduction</label><br>
+        <%= f.text_field :introduction, placeholder:"introduction" %><br>
+    <%= f.submit "Update User" %>
+<% end %>
