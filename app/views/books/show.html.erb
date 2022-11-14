@@ -7,6 +7,10 @@
     </td>
     <td><p><%= link_to @books.title, book_path(@books.id) %></p></td>
     <td><p><%= @books.body %></p></td>
+    <% if @books.user == current_user %>
+    <td><%= link_to "Edit", edit_book_path(@books.id) %></td>
+    <td><%= link_to "Destroy", book_path(@books.id),method: :destroy %></td>
+    <% end %>
   </tr>
   </tbody>
 </table>
