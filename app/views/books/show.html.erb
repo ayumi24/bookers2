@@ -1,3 +1,7 @@
+<div>
+  <%= flash[:notice] %>
+</div>
+<%= render 'users/use', user: @user, book: @new_book %>
 <h2>Book detail</h2>
 <table>
   <tbody>
@@ -9,7 +13,7 @@
     <td><p><%= @books.body %></p></td>
     <% if @books.user == current_user %>
     <td><%= link_to "Edit", edit_book_path(@books.id) %></td>
-    <td><%= link_to "Destroy", book_path(@books.id),method: :destroy %></td>
+    <td><%= link_to "Destroy", book_path(@books.id),method: :delete,"data-confirm"=>"本当に削除しますか？" %></td>
     <% end %>
   </tr>
   </tbody>

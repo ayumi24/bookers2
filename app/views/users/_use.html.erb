@@ -1,14 +1,22 @@
+<% if book.errors.any? %>
+  <%= book.errors.count %>件のエラーが発生しました
+  <ul>
+    <% book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 <h2>User info</h2>
-<%= image_tag @user.get_profile_image(100,100) %>
+<%= image_tag user.get_profile_image(100,100) %>
 <table>
   <tbody>
     <tr>
       <th>name</th>
-      <th><%= @user.name %></th>
+      <th><%= user.name %></th>
     </tr>
     <tr>
       <th>introduction</th>
-      <th><%= @user.introduction %></th>
+      <th><%= user.introduction %></th>
     </tr>
     <tr>
       <th><%= link_to "User update", edit_user_path(user.id) %></th>
@@ -17,7 +25,7 @@
 </table>
 
 <h1>New book</h1>
-  <%= form_with model: @book do |f| %>
+  <%= form_with model: book do |f| %>
     <p>Title</p>
       <%= f.text_field :title %>
     <p>Opinion</p>
