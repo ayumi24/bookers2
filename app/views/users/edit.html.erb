@@ -1,5 +1,13 @@
+<% if @user.errors.any? %>
+  <%= @user.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 <h2>User info</h2>
-<%= form_with model:User.find(params[:id]) do |f| %>
+<%= form_with model:@user do |f| %>
     <label for="inputName">Name</label><br>
         <%= f.text_field :name,autofocus: true, id:"inputName",placeholder:"名前" %><br>
     <label for="inputImage">image</label><br>
