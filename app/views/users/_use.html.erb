@@ -1,26 +1,27 @@
-<h2>User info</h2>
-<%= image_tag user.get_profile_image(100,100) %>
-<table>
-  <tbody>
-    <tr>
-      <th>name</th>
-      <th><%= user.name %></th>
-    </tr>
-    <tr>
-      <th>introduction</th>
-      <th><%= user.introduction %></th>
-    </tr>
-    <tr>
-      <th><%= link_to "User update", edit_user_path(user.id) %></th>
-    </tr>
-  </tbody>
-</table>
-
-<h1>New book</h1>
-  <%= form_with model: book do |f| %>
-    <p>Title</p>
-      <%= f.text_field :title %>
-    <p>Opinion</p>
-      <%= f.text_area :body %><br>
-    <%= f.submit 'Create Book' %>
-  <% end %>
+<div class="col-lg-4">
+  <h2>User info</h2>
+    <%= image_tag user.get_profile_image(100,100) %>
+    <table class="table table-striped">
+      <tbody>
+        <tr>
+          <th>name</th>
+          <th><%= user.name %></th>
+        </tr>
+        <tr>
+          <th>introduction</th>
+          <th><%= user.introduction %></th>
+        </tr>
+        <tr>
+          <th><%= link_to "User update", edit_user_path(user.id) %></th>
+        </tr>
+      </tbody>
+    </table>
+  <h1>New book</h1>
+    <%= form_with model: book do |f| %>
+      <p>Title</p>
+        <%= f.text_field :title %>
+      <p>Opinion</p>
+        <%= f.text_area :body %><br>
+      <%= f.submit 'Create Book' %>
+    <% end %>
+</div>
