@@ -1,18 +1,24 @@
-<%= render 'use', user: current_user, book: @book %>
-<h2>Users</h2>
-<table>
-  <thead>
-    <th>image</th>
-    <th>name</th>
-    <th colspan = "3"></th>
-  </thead>
-  <tbody>
-  <% @users.each do |user| %>
-  <tr>
-    <td><%= image_tag user.get_profile_image(100,100) %></td>
-    <td><p><%= user.name %></p></td>
-    <td><p><%= link_to "show", user_path(user.id) %></p></td>
-  </tr>
-  <% end %>
-  </tbody>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'use', user: current_user, book: @book %>
+    </div>
+    <div class="col-md-9">
+      <h2>Users</h2>
+      <table class="table tabre-striped">
+        <thead>
+          <th>image</th>
+          <th>name</th>
+          <th colspan = "3"></th>
+        </thead>
+        <tbody>
+        <% @users.each do |user| %>
+        <tr>
+          <td><%= image_tag user.get_profile_image(100,100) %></td>
+          <td><p><%= user.name %></p></td>
+          <td><p><%= link_to "show", user_path(user.id) %></p></td>
+        </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>

@@ -6,11 +6,13 @@
     <% end %>
   </ul>
 <% end %>
-<%= render 'users/use', user: @user, book: @book %>
-<div class="col-lg-8">
-<h2>Books</h2>
 <div class="container">
   <div class="row">
+<div class="col-md-3">
+<%= render 'users/use', user: @user, book: @book %>
+</div>
+<div class="col-md-9">
+<h2>Books</h2>
     <table class="table tabre-striped">
       <thead>
         <th>Title</th>
