@@ -12,7 +12,7 @@
         </tr>
         </table>
         <tr>
-          <th><%= link_to edit_user_path(user.id), class: "btn btn-secondry btn-block" do %>
+          <th><%= link_to edit_user_path(user.id), class: "btn btn-outline-secondary btn-block" do %>
           <i class="fas fa-user-cog"></i></th>
           <% end %>
         </tr>
@@ -23,5 +23,5 @@
         <%= f.text_field :title %>
       <p>Opinion</p>
         <%= f.text_area :body %><br>
-      <%= f.submit 'Create Book' %>
+      <%= f.submit 'Create Book', class: "btn btn-success" %>
     <% end %>
